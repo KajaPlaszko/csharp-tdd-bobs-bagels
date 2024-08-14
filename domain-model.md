@@ -39,7 +39,7 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 
 Classes					Methods							Scenario								Outputs 
-Basket					changeCapasity(int cap)			changes capacity based on input			void
+Basket					changeCapacity(int cap)			changes capacity based on input			void
 
 ============================================================================================================
 
@@ -49,5 +49,5 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 Classes					Methods								Scenario											Outputs 
-Basket					removeCheck(string bagel)			if bagel does exist, calling remove method			string 
-															if not, errorr message								string 
+Basket					doesExist(string bagel)				if bagel does exist									true 
+															if not, errorr message								false 
