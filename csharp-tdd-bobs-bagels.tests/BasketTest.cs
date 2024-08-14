@@ -11,13 +11,14 @@ public class BasketTest
     {
         //SetUp
         Basket basket = new Basket();
+        basket.Capacity = 10;
         string bagel = "bagel";
 
         //Execute
-        basket.orderBagel("bagel");
+        basket.orderBagel(bagel);
 
         //Verify
-        Assert.That(basket.Items.Contains(bagel));
+        Assert.IsTrue(basket.Items.Contains(bagel));
     }
 
     [Test]
@@ -25,15 +26,17 @@ public class BasketTest
     {
         //SetUp
         Basket basket = new Basket();
-        int expected = basket.capasity;
+        basket.Capacity = 10;
+        string bagel = "avo-bagel";
 
         //Execute
-        basket.removeBagel();
-        int result = basket.capasity;
+        basket.orderBagel(bagel);
+        basket.removeBagel(bagel);
+
 
         //Verify
-        Assert.That(result == expected -1);
-        
+        Assert.IsFalse(basket.Items.Contains(bagel));
+
 
     }
 
@@ -42,7 +45,7 @@ public class BasketTest
     {
         //SetUp
         Basket basket = new Basket();
-        basket.capasity = 0;
+        basket.Capacity = 0;
 
         //Execute
         
@@ -59,7 +62,7 @@ public class BasketTest
 
 
         //Execute
-        basket.capasity = 10;
+        basket.Capacity = 10;
 
         //Verify
         Assert.IsFalse(basket.isFull());
@@ -76,36 +79,9 @@ public class BasketTest
         int result = basket.changeCapacity(6);
 
         //Verify
-        Assert.That(basket.capasity == result);
+        Assert.That(basket.Capacity == result);
     }
 
 
-    [Test]
-    public void testDoesExist()
-    {
-        //SetUp
-        Basket basket = new Basket();
-
-
-        //Execute
-        bool result = basket.doesExist("cheese-bagel");
-
-        //Verify
-        Assert.IsTrue(result);
-
-    }   
-    
-    [Test]
-    public void testDoesNotExist()
-    {
-        //SetUp
-        Basket basket = new Basket();
-
-
-        //Execute
-        bool result = basket.doesExist("cheese-bagel");
-
-        //Verify
-        Assert.IsFalse(result);
-    }
+ 
 }

@@ -49,5 +49,5 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 Classes					Methods								Scenario											Outputs 
-Basket					doesExist(string bagel)				if bagel does exist									true 
-															if not, errorr message								false 
+Basket					checks in removeBagel()				if bagel does exist it removes						void  
+																							 
